@@ -18,7 +18,7 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 -- Keybinds --
 
 -- Open terminal window wiht Alt-t
-vim.keymap.set("n", "<A-t>", ":vert term <cr> :vertical resize 70 <C-w>w", { remap = true, silent = false })
+vim.keymap.set("n", "<A-t>", ":vert term <cr> :vertical resize 70 <cr> <C-w>w", { remap = true, silent = false })
 
 -- Swap windows using alt+hjkl
 vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
