@@ -15,9 +15,9 @@ vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 -- If the OS is windows, use powershell for terminal
-if vim.loop.os_uname().sysname == "Windows_NT" then
-    vim.o.shell = "powershell"
-end
+-- if vim.loop.os_uname().sysname == "Windows_NT" then
+--     vim.o.shell = "powershell"
+-- end
 
 -- Keybinds --
 
@@ -39,7 +39,4 @@ vim.keymap.set("t", "<A-l>", "<C-\\><C-N><C-w>l", { noremap = true, silent = tru
 -- vim.api.nvim_set_keymap('v', '<cr>', 'y<C-w>wpi<cr><C-\\><C-N><C-w>w', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<cr>', 'Y<C-w>wpi<cr><C-\\><C-N><C-w>w', { noremap = true, silent = true })
 
-
-
--- Function to clean up newlines and send to the REPL
 
