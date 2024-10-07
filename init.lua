@@ -2,10 +2,12 @@
 require("config.lazy")
 
 -- Set colors
-vim.cmd[[colorscheme desert]]
+-- vim.cmd[[colorscheme desert]]
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 
 -- Remove border between vertical windows
-vim.cmd[[:hi VertSplit ctermfg=bg ctermbg=bg guifg=bg guibg=bg]]
+-- vim.cmd[[:hi VertSplit ctermfg=bg ctermbg=bg guifg=bg guibg=bg]]
 vim.cmd[[set fillchars+=vert:\ ]]
 
 -- Indentations
