@@ -14,15 +14,23 @@ vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a T
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
--- If the OS is windows, use powershell for terminal
--- if vim.loop.os_uname().sysname == "Windows_NT" then
---     vim.o.shell = "powershell"
--- end
 
 -- Keybinds --
 
--- Open terminal window wiht Alt-t
-vim.keymap.set("n", "<A-t>", ":vert term <cr> :vertical resize 70 <cr> <C-w>w", { remap = true, silent = false })
+-- Open terminal window with leader t
+vim.keymap.set("n", "<leader>t", ":vert term <cr> :vertical resize 70 <cr> <C-w>w", { remap = true, silent = false })
+
+-- Open telescope using leader f
+vim.keymap.set("n", "<leader>f", ":Telescope  <cr>", { remap = true, silent = false })
+
+-- Open lazygit using leader g
+vim.keymap.set("n", "<leader>g", ":LazyGit <cr>", { remap = true, silent = false })
+
+-- Map leader n to :noh
+vim.keymap.set("n", "<leader>n", ":noh <cr>", { remap = true, silent = false })
+
+-- Map leader w to :w
+vim.keymap.set("n", "<leader>w", ":w <cr>", { remap = true, silent = false })
 
 -- Swap windows using alt+hjkl
 vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
@@ -38,5 +46,3 @@ vim.keymap.set("t", "<A-l>", "<C-\\><C-N><C-w>l", { noremap = true, silent = tru
 -- Slime thing (if plugin is not available)
 -- vim.api.nvim_set_keymap('v', '<cr>', 'y<C-w>wpi<cr><C-\\><C-N><C-w>w', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<cr>', 'Y<C-w>wpi<cr><C-\\><C-N><C-w>w', { noremap = true, silent = true })
-
-
