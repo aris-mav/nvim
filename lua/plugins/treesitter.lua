@@ -25,7 +25,7 @@ return {
             auto_install = false,
 
             -- List of parsers to ignore installing (for "all")
-            ignore_install = { "javascript" },
+            ignore_install = {},
 
             highlight = {
                 -- `false` will disable the whole extension
@@ -42,6 +42,15 @@ return {
             },
             indent = {enable = true},
 
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "<C-s>",
+                    node_incremental = "<C-s>",
+                    scope_incremental = false,
+                    node_decremental = "<BS>",
+                },
+            },
             textobjects = {
                 select = {
                     enable = true,

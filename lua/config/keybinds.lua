@@ -2,10 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Open side window to the left
+-- Open side window to the left using leader v
 vim.keymap.set("n", "<leader>v", ":vs | Ex | vert resize 67 | set wfw | echo '' <cr>", { remap = true, silent = false })
 
--- Open bottom window
+-- Open bottom window using leader s
 vim.keymap.set("n", "<leader>s", ":below split | Ex | resize 15 | set wfh | echo '' <cr>", { remap = true, silent = false })
 
 -- Open telescope using leader t
@@ -24,13 +24,21 @@ vim.keymap.set("n", "<leader>l", ":Telescope live_grep <cr>", { remap = true, si
 vim.keymap.set("n", "<leader>g", ":LazyGit <cr>", { remap = true, silent = false })
 
 -- Map leader n to :noh
-vim.keymap.set("n", "<leader>n", ":noh <cr>", { remap = true, silent = false })
+-- vim.keymap.set("n", "<leader>n", ":noh <cr>", { remap = true, silent = false })
 
 -- Map leader w to :w
 vim.keymap.set("n", "<leader>w", ":w <cr>", { remap = true, silent = false })
 
 -- Map leader e to netrw for the directory of curent file
-vim.keymap.set("n", "<leader>e", ":Explore <cr>", { remap = true, silent = false })
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { remap = true, silent = false })
+
+-- Keep cursor centered after searching
+vim.keymap.set("n", "n", "nzzzv", { remap = true, silent = false })
+vim.keymap.set("n", "N", "Nzzzv", { remap = true, silent = false })
+
+-- Map leader y to yank in plus register in normal and visual mode
+
+vim.keymap.set({ "n", "v" } , "<leader>y", '\"+y', { remap = true, silent = false })
 
 -- Swap windows using alt+hjkl
 vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
