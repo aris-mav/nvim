@@ -2,8 +2,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Open terminal window with alt t
-vim.keymap.set("n", "<A-t>", ":vert term <cr> :vertical resize 67 <cr> <C-w>w", { remap = true, silent = false })
+-- Open side window to the left
+vim.keymap.set("n", "<leader>v", ":vs | Ex | vert resize 67 | set wfw | echo '' <cr>", { remap = true, silent = false })
+
+-- Open bottom window
+vim.keymap.set("n", "<leader>s", ":below split | Ex | resize 15 | set wfh | echo '' <cr>", { remap = true, silent = false })
 
 -- Open telescope using leader t
 vim.keymap.set("n", "<leader>t", ":Telescope  <cr>", { remap = true, silent = false })
@@ -20,8 +23,8 @@ vim.keymap.set("n", "<leader>l", ":Telescope live_grep <cr>", { remap = true, si
 -- Open lazygit using leader g
 vim.keymap.set("n", "<leader>g", ":LazyGit <cr>", { remap = true, silent = false })
 
--- Map leader h to :noh
-vim.keymap.set("n", "<leader>h", ":noh <cr>", { remap = true, silent = false })
+-- Map leader n to :noh
+vim.keymap.set("n", "<leader>n", ":noh <cr>", { remap = true, silent = false })
 
 -- Map leader w to :w
 vim.keymap.set("n", "<leader>w", ":w <cr>", { remap = true, silent = false })
