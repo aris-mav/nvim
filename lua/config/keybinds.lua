@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Slime thing (if plugin is not available)
+-- vim.api.nvim_set_keymap('v', '<cr>', 'y<C-w>wpi<cr><C-\\><C-N><C-w>w', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<cr>', 'Y<C-w>wpi<cr><C-\\><C-N><C-w>w', { noremap = true, silent = true })
+
 -- Open side window to the left using leader v
 vim.keymap.set("n", "<leader>v", ":vs | Ex | vert resize 67 | set wfw | echo '' <cr>", { remap = true, silent = false })
 

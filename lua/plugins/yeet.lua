@@ -1,8 +1,6 @@
 return {
     "samharju/yeet.nvim",
-    dependencies = {
-        "stevearc/dressing.nvim", -- optional, provides sane UX
-    },
+
     version = "*", -- use the latest release, remove for master
     cmd = "Yeet",
     opts = {
@@ -17,33 +15,30 @@ return {
         notify_on_success = false,
         -- Print warning if pane list could not be fetched, e.g. tmux not running.
         warn_tmux_not_running = false,
-        -- Resolver for cache file
-        cache = function()
-            -- resolves project path and uses stdpath("cache")/yeet/<project>, see :h yeet
-        end,
-        -- Use cache.
-        cache = true,
-        -- Window options for cache float
-        cache_window_opts = {
-            relative = "editor",
-            row = (vim.o.lines - 15) * 0.5,
-            col = (vim.o.columns - math.ceil(0.6 * vim.o.columns)) * 0.5,
-            width = math.ceil(0.6 * vim.o.columns),
-            height = 15,
-            border = "single",
-            title = "Yeet",
-        },
     },
     keys = {
+
+        -- Yeet visual selection. Useful sending core to a repl or running multiple commands.
         {
-            -- Yeet visual selection. Useful sending core to a repl or running multiple commands.
             "<cr>",
-            function() require("yeet").execute_selection(
-                { clear_before_yeet = false, notify_on_success = false }
-                ) 
+            function()
+                require("yeet").execute_selection(
+                {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
+                )
             end,
             mode = { "v" },
         },
+
+        -- Yeet current line
+        {
+            "<cr>",
+            function()
+                require("yeet").execute(
+                vim.api.nvim_get_current_line(),
+                {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
+                )
+            end,
+            mode = { "n" },
+        },
     }
 }
-
