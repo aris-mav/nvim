@@ -30,15 +30,15 @@ return {
         },
 
         -- Yeet current line
-        {
-            "<cr>",
-            function()
-                require("yeet").execute(
-                vim.api.nvim_get_current_line(),
-                {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
-                )
-            end,
-            mode = { "n" },
-        },
+        -- {
+        --     "<cr>",
+        --     function()
+        --         require("yeet").execute(
+        --         vim.api.nvim_get_current_line(),
+        --         {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
+        --         )
+        --     end,
+        --     mode = { "n" },
+        -- },
     }
 }

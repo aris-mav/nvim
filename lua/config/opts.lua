@@ -1,6 +1,7 @@
 -- Set colors
 -- vim.cmd[[colorscheme desert]]
 vim.o.background = "dark" -- or "light" for light mode
+vim.opt.termguicolors = true
 vim.cmd([[colorscheme gruvbox]])
 
 -- Remove border between vertical windows
@@ -15,14 +16,32 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 vim.opt.hlsearch = false -- Do not highlight search results
 vim.opt.incsearch = true -- Highlight search results only as you type
+
 vim.opt.scrolloff = 5 -- Number of lines to keep above and below the cursor
+vim.opt.sidescrolloff = 2 -- Number of columns to keep to the left and right of the cursor
+
+vim.g.netrw_banner = 0
+
+-- vim.opt.cursorline = true
+
+-- Wrap text
+vim.opt.textwidth = 80
+vim.opt.wrap = true
+
+-- vim.opt.clipboard = "unnamedplus"
+
+vim.opt.undofile = true
+
+-- Ignore case in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 
 -- Julia lsp config
 require'lspconfig'.julials.setup{
     on_new_config = function(new_config, _)
-        local julia = vim.fn.expand("C:\\Users\\f21157am\\.julia\\environments\\nvim-lspconfig")
+        local julia = vim.fn.expand("C:\\Users\\arism\\.julia\\environments\\nvim-lspconfig")
         if require'lspconfig'.util.path.is_file(julia) then
-	    vim.notify("Hello!")
             new_config.cmd[1] = julia
         end
     end
