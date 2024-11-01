@@ -1,7 +1,7 @@
 return {
     "samharju/yeet.nvim",
 
-    version = "*", -- use the latest release, remove for master
+    -- version = "*", -- use the latest release, remove for master
     cmd = "Yeet",
     opts = {
         -- Send <CR> to channel after command for immediate execution.
@@ -30,15 +30,16 @@ return {
         },
 
         -- Yeet current line
-        -- {
-        --     "<cr>",
-        --     function()
-        --         require("yeet").execute(
-        --         vim.api.nvim_get_current_line(),
-        --         {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
-        --         )
-        --     end,
-        --     mode = { "n" },
-        -- },
+        {
+            "<leader><cr>",
+            function()
+                require("yeet").execute(
+                vim.api.nvim_get_current_line(),
+                {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
+                )
+
+            end,
+            mode = { "n" },
+        },
     }
 }
