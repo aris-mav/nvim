@@ -27,21 +27,17 @@ vim.keymap.set("n", "<leader>l", ":Telescope live_grep <cr>", { remap = true, si
 -- Open lazygit using leader g
 vim.keymap.set("n", "<leader>g", ":LazyGit <cr>", { remap = true, silent = false })
 
--- Map leader n to :noh
--- vim.keymap.set("n", "<leader>n", ":noh <cr>", { remap = true, silent = false })
-
--- Map leader w to :w
+-- Map leader-w to :w
 vim.keymap.set("n", "<leader>w", ":w <cr>", { remap = true, silent = false })
 
--- Map leader e to netrw for the directory of curent file
+-- Map leader-e to netrw for the directory of curent file
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { remap = true, silent = false })
 
 -- Keep cursor centered after searching
 vim.keymap.set("n", "n", "nzzzv", { remap = true, silent = false })
 vim.keymap.set("n", "N", "Nzzzv", { remap = true, silent = false })
 
--- Map leader y to yank in plus register in normal and visual mode
-
+-- Map leader-y to yank in plus register in normal and visual mode
 vim.keymap.set({ "n", "v" } , "<leader>y", '\"+y', { remap = true, silent = false })
 
 -- Swap windows using alt+hjkl
