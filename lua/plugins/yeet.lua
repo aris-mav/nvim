@@ -17,7 +17,6 @@ return {
         warn_tmux_not_running = false,
     },
     keys = {
-
         -- Yeet visual selection. Useful sending core to a repl or running multiple commands.
         {
             "<cr>",
@@ -40,6 +39,17 @@ return {
 
             end,
             mode = { "n" },
+        },
+
+        -- Pop command cache open
+        {
+            "<leader>y",
+            function() require("yeet").list_cmd() end,
+        },
+
+        -- Open target selection
+        {
+            "<leader>yt", function() require("yeet").select_target() end,
         },
     }
 }

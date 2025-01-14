@@ -1,4 +1,3 @@
-
 return {
     'JuliaEditorSupport/julia-vim'
     }
