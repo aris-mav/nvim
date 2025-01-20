@@ -20,7 +20,7 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.hlsearch = false -- Do not highlight search results
 vim.opt.incsearch = true -- Highlight search results only as you type
 
-vim.opt.scrolloff = 3 -- Number of lines to keep above and below the cursor
+vim.opt.scrolloff = 1 -- Number of lines to keep above and below the cursor
 vim.opt.sidescrolloff = 2 -- Number of columns to keep to the left and right of the cursor
 
 vim.g.netrw_banner = 0

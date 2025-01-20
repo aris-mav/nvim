@@ -40,6 +40,9 @@ vim.keymap.set("n", "N", "Nzzzv", { remap = true, silent = false })
 -- Map leader-y to yank in plus register in normal and visual mode
 vim.keymap.set({ "n", "v" } , "<leader>y", '\"+y', { remap = true, silent = false })
 
+-- Map leader-p to paste from 0 register in normal and visual mode
+vim.keymap.set({ "n", "v" } , "<leader>p", '\"0p', { remap = true, silent = false })
+
 -- Swap windows using alt+hjkl
 vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })

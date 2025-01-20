@@ -28,22 +28,9 @@ return {
             mode = { "v" },
         },
 
-        -- Yeet current line
-        {
-            "<leader><cr>",
-            function()
-                require("yeet").execute(
-                vim.api.nvim_get_current_line(),
-                {yeet_and_run = true, clear_before_yeet = false, notify_on_success = false }
-                )
-
-            end,
-            mode = { "n" },
-        },
-
         -- Pop command cache open
         {
-            "<leader>y",
+            "<leader><cr>",
             function() require("yeet").list_cmd() end,
         },
 
