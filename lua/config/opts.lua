@@ -3,7 +3,7 @@
 -- vim.wo.number = true
 
 -- Set colors
-vim.o.background = "dark" 
+vim.o.background = "dark"
 vim.opt.termguicolors = true
 vim.cmd([[colorscheme gruvbox]])
 
@@ -26,19 +26,17 @@ vim.opt.sidescrolloff = 2 -- Number of columns to keep to the left and right of 
 vim.g.netrw_banner = 0
 
 -- vim.opt.cursorline = true
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Wrap text
 vim.opt.textwidth = 80
 vim.opt.wrap = true
-
--- vim.opt.clipboard = "unnamedplus"
 
 vim.opt.undofile = true
 
 -- Ignore case in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
 
 -- Julia lsp config
 -- require'lspconfig'.julials.setup{
@@ -49,6 +47,3 @@ vim.opt.smartcase = true
 --         end
 --     end
 -- }
---
---
---
