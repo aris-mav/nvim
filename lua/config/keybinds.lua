@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>s", ":below split | Ex | resize 15 | set wfh | echo
 vim.keymap.set("n", "<leader>t", ":Telescope  <cr>", { remap = true, silent = false })
 vim.keymap.set("n", "<leader>b", ":Telescope buffers <cr>", { remap = true, silent = false })
 vim.keymap.set("n", "<leader>f", ":Telescope find_files <cr>", { remap = true, silent = false })
-vim.keymap.set("n", "<leader>l", ":Telescope live_grep <cr>", { remap = true, silent = false })
+vim.keymap.set("n", "<leader>/", ":Telescope live_grep <cr>", { remap = true, silent = false })
 
 -- Map leader-w to :w
 vim.keymap.set("n", "<leader>w", ":w <cr>", { remap = true, silent = false })
