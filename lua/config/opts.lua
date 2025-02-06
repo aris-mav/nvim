@@ -1,6 +1,6 @@
 -- linenumbers
--- vim.wo.relativenumber = true
--- vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.number = true
 
 -- Set colors
 vim.o.background = "dark"
@@ -37,6 +37,15 @@ vim.opt.undofile = true
 -- Ignore case in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- No line numbers for terminal windows
+vim.api.nvim_create_autocmd('TermOpen',{
+    group = vim.api.nvim_create_augroup('custom-term-open', {clear = true }),
+    callback = function()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end,
+})
 
 -- Julia lsp config
 -- require'lspconfig'.julials.setup{
